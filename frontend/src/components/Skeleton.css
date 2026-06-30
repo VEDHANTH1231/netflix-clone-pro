@@ -1,0 +1,41 @@
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #1c1c1c 25%,
+    #2c2c2c 50%,
+    #1c1c1c 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.skeleton-card {
+  aspect-ratio: 2 / 3;
+  width: 100%;
+}
+
+.skeleton-text {
+  height: 16px;
+  margin-bottom: 8px;
+}
+
+.skeleton-title {
+  height: 24px;
+  margin-bottom: 12px;
+}
+
+.skeleton-hero {
+  height: 70vh;
+  width: 100%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

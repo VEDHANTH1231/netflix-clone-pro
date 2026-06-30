@@ -1,0 +1,92 @@
+.movie-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #1c1c1c;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  flex: 0 0 auto; /* Crucial for horizontal row scrolling */
+}
+
+.movie-card:hover {
+  transform: scale(1.08) translateY(-5px);
+  box-shadow: var(--shadow-card);
+  z-index: 10;
+}
+
+.movie-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.movie-card-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.7) 70%, transparent 100%);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.movie-card:hover .movie-card-info {
+  opacity: 1;
+}
+
+.movie-card-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-white);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.movie-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+}
+
+.movie-card-rating {
+  color: #46d369; /* Green match score / rating color */
+  font-weight: 700;
+}
+
+.movie-card-year {
+  color: var(--text-muted);
+}
+
+.movie-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 5px;
+}
+
+.watchlist-btn-small {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-white);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.watchlist-btn-small:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: var(--text-white);
+  transform: scale(1.1);
+}
